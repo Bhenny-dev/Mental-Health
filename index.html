@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mental Health Application</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Us</span></a></li>
+        <li><a href="#self-help" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Self-Help Tools</span></a></li>
+        <li><a href="#therapists" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Therapists</span></a></li>
+        <li><a href="#programs" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Programs </span></a></li>
+        <li><a href="#support" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Get Support</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Mental Health Application</h1>
+      <p> 🕊️ <span class="typed" data-typed-items="It's okay to ask help., Your mind matters every day., Healing is not a weakness."></span>🩺</p>
+      <div class="social-links">
+        <a href="https://x.com/RiveraBhenny" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/benlor.rivera.9" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/rivera.bhenny/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/Bhenny-dev" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/benlor-rivera-96268234a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>"We are a purpose-driven team dedicated to promoting mental wellness, emotional resilience, and compassionate support. Rooted in a shared belief that mental health matters every day, we aspire to create safe, accessible, and empowering spaces where individuals can find hope, healing, and encouragement. Our mission is to break the stigma surrounding mental health and foster a culture of openness, empathy, and self-care."</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 image-slider-container">
+  <div class="image-scroll-wrapper" id="imageSlider">
+    <img src="assets/img/13.gif" alt="GIF Image">
+    <img src="assets/img/14.gif" alt="PNG Image">
+    <img src="assets/img/12.gif" alt="PNG Image">
+  </div>
+  <div class="scroll-indicator" id="indicatorBar">
+    <span class="active"></span>
+    <span></span>
+  </div>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById('imageSlider');
+  const images = slider.querySelectorAll('img');
+  const indicatorBar = document.getElementById('indicatorBar');
+
+  // Clear and create indicator dots dynamically
+  indicatorBar.innerHTML = '';
+  images.forEach((_, i) => {
+    const span = document.createElement('span');
+    if (i === 0) span.classList.add('active');
+    indicatorBar.appendChild(span);
+  });
+
+  const indicators = indicatorBar.querySelectorAll('span');
+
+  function updateActiveImage() {
+    const scrollLeft = slider.scrollLeft;
+    const imageWidth = slider.clientWidth;
+    const index = Math.round(scrollLeft / imageWidth);
+
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      indicators[i]?.classList.toggle('active', i === index);
+    });
+  }
+
+  // Attach scroll listener with delay for performance
+  slider.addEventListener('scroll', () => {
+    clearTimeout(slider._scrollTimeout);
+    slider._scrollTimeout = setTimeout(updateActiveImage, 100);
+  });
+
+  // Make indicators clickable
+  indicators.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      slider.scrollTo({ left: i * slider.clientWidth, behavior: 'smooth' });
+    });
+  });
+
+  // Run once on load
+  updateActiveImage();
+});
+</script>
+
+</div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+
+  <!-- What We Do -->
+  <div class="story-container">
+    <h3>🧠 What We Do</h3>
+    <div id="whatWrapper" class="collapsed">
+      <p class="fst-italic">
+        We are a committed group of advocates, mental health enthusiasts, educators, and creatives who bring together diverse experiences in outreach, digital wellness tools, peer support, and community engagement. Through thoughtful design, evidence-informed content, and a heart for service, we aim to make mental health education and support more approachable and inclusive for all.
+      </p>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Founded:</strong> <span>11 June, 2025</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>Profile.Bhenny-Web</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+63 907 4342 114</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong> <span>Pico, La Trinidad, Benguet</span></li>
+          </ul>
+        </div>
+                  <div class="col-lg-6">
+                    <ul>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Members:</strong> <span>20</span></li>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Team Composition:</strong> <span>Mental health advocates, educators, creatives, peer supporters</span></li>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>riverabenlor461@gmail.com</span></li>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Support Availability:</strong> <span>Open for partnerships, collaborations, and community outreach</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <button class="toggle-btn" onclick="toggleSection('whatWrapper', this)">More</button>
+            </div>
+
+          <!-- Our Story -->
+          <div class="story-container">
+            <h3>🌟 Our Story</h3>
+            <div id="storyWrapper" class="collapsed">
+              <p>
+                Our journey began with a simple but powerful idea: that no one should feel alone in their struggles. Over the years, we have taken part in mental health campaigns, awareness workshops, peer counseling initiatives, and leadership programs aimed at creating real, lasting impact. Experiences like “The NEXUS: Empowering Young Leaders to Grow and Develop” and “Beyond Success Training” by John Maxwell have guided our values and deepened our mission.
+              </p>
+              <p>
+                By bringing together both lived experiences and continuous learning, we are committed to fostering a space of trust, reflection, and growth — not only for ourselves but for every individual we serve. Let’s heal together, grow stronger, and build a future where mental well-being is a shared priority.
+              </p>
+            </div>
+            <button class="toggle-btn" onclick="toggleSection('storyWrapper', this)">More</button>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2> Facts</h2>
+          <p>🌿</p>
+          <p>We are passionate about creating safe, inclusive, and supportive spaces where individuals can prioritize their mental well-being. Through empathy, advocacy, and community-centered initiatives, we strive to foster understanding, healing, and connection—because mental health is for everyone, every day.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="0" class="purecounter">11</span>
+              <p>People Reached</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">20</span>
+              <p>Awareness Campaigns</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="203" data-purecounter-duration="0" class="purecounter">203</span>
+              <p>Support Hours</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="0" class="purecounter">7</span>
+              <p>Recognitions</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills & Strengths</h2>
+          <p>As mental health advocates, we focus on empathetic care, effective communication, and building supportive environments. These core strengths help us connect with individuals, raise awareness, and deliver impactful mental health programs.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">Empathetic Communication<i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Mental Health Education & Advocacy <i class="val">87%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Crisis Response & Emotional Support <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Cultural Sensitivity & Inclusivity<i class="val">96%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">Community Outreach & Engagement <i class="val">88%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Active Listening & Counseling Skills <i class="val">92%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Ethical Practice & Confidentiality <i class="val">84%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Stress Management & Self-Awareness <i class="val">92%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Self-Help Section ======= -->
+    <section id="self-help" class="self-help">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Self-Help</h2>
+          <p>
+       "Your journey to clarity and strength begins here. Thoughtful insights, reflective exercises, and gentle guidance to help you navigate life’s challenges with confidence.
+      </p>
+          </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="self-help-title">Mood Tracker</h3>
+            <div class="self-help-item">
+              <h4>1. What Is a Mood Tracker?</h4>
+                <p><em>A mood tracker is a tool used to log emotions at regular intervals, helping individuals identify patterns and triggers. It can be as simple as a handwritten journal or as advanced as an AI-powered app.</em></p>
+            </div>
+              <div class="self-help-item">
+                <h4>2. Why Mood Tracking Matters</h4>
+                <h5>Improves Emotional Awareness</h5>
+                <ul>
+                  <li>Helps individuals recognize emotional trends and triggers.</li>
+                </ul>
+                <h5>Supports Mental Health Management</h5>
+                <ul>
+                  <li>Beneficial for those dealing with anxiety, depression, or mood disorders.</li>
+                </ul>
+                <h5>Enhances Decision-Making</h5>
+                <ul>
+                  <li>Research suggests that mood influences cognitive processing, with positive moods leading to broader information gathering.</li>
+                </ul>
+              </div>
+
+              <div class="self-help-item">
+                <h4>3. Types of Mood Tracking Tools</h4> 
+                <h5>Journals & Logs</h5>
+                <ul>
+                  <li>Simple written records of daily emotions and events.</li>
+                </ul>
+                <h5>Mood Charts</h5>
+                <ul>
+                  <li>Visual representations of mood fluctuations over time.</li>
+                </ul>
+                <h5>Apps & Digital Tools</h5>
+                <ul>
+                  <li>AI-driven apps like Daylio and MoodFit provide insights through data analysis.</li>
+                </ul>
+              </div>
+
+              <div class="self-help-item">
+                <h4>4. Research-Backed Benefits</h4> 
+                <h5>Identifying Mood Patterns</h5>
+                <ul>
+                  <li>Studies show that tracking moods can help individuals recognize emotional cycles and triggers.</li>
+                </ul>
+                <h5>Reducing Harmful Behaviors</h5>
+                <ul>
+                  <li>Some apps have been found to reduce self-harm thoughts in adolescents.</li>
+                </ul>
+                <h5>Enhancing Communication with Therapists</h5>
+                <ul>
+                  <li>Mood logs provide valuable insights for mental health professionals.</li>
+                </ul>
+              </div>
+
+              <div class="self-help-item">
+                <h4>5. Recommended Mood Tracking Apps</h4> 
+                <h5>Daylio</h5>
+                <ul>
+                  <li>Customizable mood tracking with data insights.</li>
+                </ul>
+                <h5>MoodFit</h5>
+                <ul>
+                  <li>Focuses on mental fitness with analytics.</li>
+                </ul>
+                <h5>Sanvello</h5>
+                <ul>
+                  <li>Offers professional support alongside tracking.</li>
+                </ul>
+              </div>
+
+              <div class="self-help-item">
+            </div>
+
+            <h3 class="self-help-title">Crisis Planning Templates & Checklists</h3>
+<div class="self-help-item">
+  <h4>1. What Are Crisis Planning Templates?</h4>
+  <p><em>These are structured tools designed to help individuals prepare in advance for mental health emergencies. They guide users through identifying triggers, emergency steps, and supportive resources.</em></p>
+</div>
+
+<div class="self-help-item">
+  <h4>2. Purpose</h4>
+  <h5>Helps Prepare for Mental Health Emergencies</h5>
+  <ul>
+    <li>Provides clarity and action steps when individuals may not be able to think clearly.</li>
+  </ul>
+  <h5>Reduces Panic During a Crisis</h5>
+  <ul>
+    <li>Having a plan in place can lower anxiety and provide a sense of control.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>3. Key Components</h4> 
+  <h5>Trigger Identification</h5>
+  <ul>
+    <li>Recognizing signs or events that could lead to emotional distress.</li>
+  </ul>
+  <h5>Emergency Contacts</h5>
+  <ul>
+    <li>Listing trusted individuals and professionals to reach out to during a crisis.</li>
+  </ul>
+  <h5>Coping Strategies & Resources</h5>
+  <ul>
+    <li>Pre-listed techniques or tools to manage distress while waiting for help.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>4. Free and Trusted Templates</h4> 
+  <h5>Carepatron</h5>
+  <ul>
+    <li>Offers downloadable mental health crisis planning templates used by clinicians and patients.</li>
+  </ul>
+  <h5>Mental Health America</h5>
+  <ul>
+    <li>Provides easy-to-follow crisis plan worksheets with sections for triggers, support, and safety steps.</li>
+  </ul>
+</div>
+<div class="self-help-item">
+            </div>
+
+
+            <h3 class="self-help-title">Guided Breathing & Meditation Videos</h3>
+                <div class="self-help-item">
+                  <h4>1. What Are Guided Breathing & Meditation Videos?</h4>
+                  <p><em>These videos provide structured exercises that teach users how to control their breathing and practice mindfulness, helping to calm the nervous system and regulate emotions.</em></p>
+                </div>
+
+                    <div class="self-help-item">
+                      <h4>2. Purpose</h4>
+                      <h5>Helps Regulate Stress</h5>
+                      <ul>
+                        <li>Slows down the nervous system, promoting calmness and emotional stability.</li>
+                      </ul>
+                      <h5>Improves Focus</h5>
+                      <ul>
+                        <li>Breathing exercises anchor attention, reducing mental distractions.</li>
+                      </ul>
+                      <h5>Enhances Emotional Resilience</h5>
+                      <ul>
+                        <li>Regular practice builds tolerance to emotional stress and improves mental agility.</li>
+                      </ul>
+                    </div>
+
+                    <div class="self-help-item">
+                      <h4>3. Research-Backed Benefits</h4> 
+                      <h5>Reduces Cortisol Levels</h5>
+                      <ul>
+                        <li>Scientific studies show that controlled breathing significantly lowers the body’s stress hormone, cortisol.</li>
+                      </ul>
+                      <h5>Improves Heart Rate Variability (HRV)</h5>
+                      <ul>
+                        <li>Higher HRV is linked with better emotional regulation and physical health, and can be improved through regular breathwork.</li>
+                      </ul>
+                    </div>
+
+                    <div class="self-help-item">
+                      <h4>4. Recommended Videos</h4> 
+                      <h5>UCLA’s Mindful Awareness Research Center</h5>
+                      <ul>
+                        <li>Offers a library of free guided breathing and mindfulness videos based on clinical research.</li>
+                      </ul>
+                      <h5>Mayo Clinic Mindful Breathing Techniques</h5>
+                      <ul>
+                        <li>Features expert-led tutorials that are easy to follow and suitable for beginners.</li>
+                      </ul>
+                    </div>
+            <div class="self-help-item">
+            </div>
+          </div>
+   
+          <div class="col-lg-6">
+            <h3 class="self-help-title">Downloadable Worksheets</h3>
+<div class="self-help-item">
+  <h4>1. What Are Mental Health Worksheets?</h4>
+  <p><em>These are printable or digital tools designed to guide individuals through evidence-based techniques such as Cognitive Behavioral Therapy (CBT) and mindfulness practices. They help users build coping strategies, manage anxiety, and improve self-awareness.</em></p>
+</div>
+
+
+    <div class="self-help-item">
+      <h4>2. Cognitive Behavioral Therapy (CBT)</h4>
+      <h5>Challenging Negative Thoughts</h5>
+      <ul>
+        <li>Worksheets help users identify and reframe unhelpful thinking patterns.</li>
+      </ul>
+      <h5>Building Coping Strategies</h5>
+      <ul>
+        <li>Step-by-step activities develop skills to handle stress and emotional distress.</li>
+      </ul>
+    </div>
+
+    <div class="self-help-item">
+      <h4>3. Mindfulness Practices</h4> 
+      <h5>Present-Moment Awareness</h5>
+      <ul>
+        <li>Exercises train attention to the present to reduce rumination and anxiety.</li>
+      </ul>
+      <h5>Emotional Regulation</h5>
+      <ul>
+        <li>Helps users understand and manage emotional responses more effectively.</li>
+      </ul>
+    </div>
+
+    <div class="self-help-item">
+      <h4>4. Free and Trusted Resources</h4> 
+      <h5>Carepatron</h5>
+      <ul>
+        <li>Offers a wide variety of mental health worksheets including CBT and anxiety tools.</li>
+      </ul>
+      <h5>Think CBT</h5>
+      <ul>
+        <li>Provides clinician-reviewed worksheets based on therapeutic best practices.</li>
+      </ul>
+    </div>
+    <div class="self-help-item">
+            </div>
+
+    <h3 class="self-help-title">Short Mental Health Quizzes</h3>
+<div class="self-help-item">
+  <h4>1. What Are Mental Health Quizzes?</h4>
+  <p><em>These are brief, self-administered tools that help individuals reflect on their mental well-being. While not diagnostic, they offer insights into potential areas of concern such as stress, burnout, or anxiety.</em></p>
+</div>
+
+<div class="self-help-item">
+  <h4>2. Purpose</h4>
+  <h5>Assess Mental Well-Being</h5>
+  <ul>
+    <li>Quizzes help individuals evaluate stress levels, emotional balance, and potential burnout risks.</li>
+  </ul>
+  <h5>Encourage Self-Awareness</h5>
+  <ul>
+    <li>Results can motivate users to seek help or adopt healthier coping strategies.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>3. Burnout & Stress Tests</h4> 
+  <h5>Psych Central’s Burnout Quiz</h5>
+  <ul>
+    <li>Evaluates emotional exhaustion and work-related fatigue with research-based questions.</li>
+  </ul>
+  <h5>Verywell Mind’s Stress Assessment</h5>
+  <ul>
+    <li>Provides personalized feedback to identify triggers and stress levels.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>4. Understanding Accuracy</h4> 
+  <h5>Screening Tools, Not Diagnostics</h5>
+  <ul>
+    <li>These quizzes do not replace clinical evaluation but serve as a first step toward mental health insight.</li>
+  </ul>
+  <h5>Guide Toward Professional Support</h5>
+  <ul>
+    <li>High scores or concerning results may indicate the need to consult a licensed mental health professional.</li>
+  </ul>
+</div>
+<div class="self-help-item">
+            </div>
+
+<h3 class="self-help-title">Articles & Blogs (Sleep, Anxiety, Boundaries)</h3>
+<div class="self-help-item">
+  <h4>1. Why Read Mental Health Articles?</h4>
+  <p><em>Articles and blogs written by experts provide accessible, evidence-based strategies for managing common mental health challenges like anxiety, sleep problems, and interpersonal stress. They encourage learning and self-awareness outside of therapy sessions.</em></p>
+</div>
+
+<div class="self-help-item">
+  <h4>2. Sleep & Anxiety</h4>
+  <h5>Understanding the Connection</h5>
+  <ul>
+    <li>Poor sleep increases stress reactivity and worsens symptoms of anxiety.</li>
+  </ul>
+  <h5>Improving Sleep</h5>
+  <ul>
+    <li>Practices like sleep hygiene, guided relaxation, and consistent routines can reduce anxiety-related insomnia.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>3. Managing Anxiety</h4> 
+  <h5>Cognitive Reframing</h5>
+  <ul>
+    <li>Identifying and challenging irrational thoughts helps reduce anxious thinking.</li>
+  </ul>
+  <h5>Exposure Therapy</h5>
+  <ul>
+    <li>Gradual exposure to feared situations builds confidence and lowers anxiety over time.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>4. Setting Healthy Boundaries</h4> 
+  <h5>Emotional Burnout Prevention</h5>
+  <ul>
+    <li>Clear boundaries protect mental well-being by preventing overcommitment and resentment.</li>
+  </ul>
+  <h5>Relationship Quality</h5>
+  <ul>
+    <li>Healthy limits foster mutual respect and improved communication.</li>
+  </ul>
+</div>
+
+<div class="self-help-item">
+  <h4>5. Recommended Reads</h4> 
+  <h5>Sleep Psychiatrist</h5>
+  <ul>
+    <li>Offers expert articles on the interplay between sleep disorders and mental health.</li>
+  </ul>
+  <h5>Rula</h5>
+  <ul>
+    <li>Publishes clinically reviewed blogs on anxiety management and emotional boundaries.</li>
+  </ul>
+</div>
+<div class="self-help-item">
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End self-help Section -->
+
+
+    <!-- ======= - Visual Reflections Section ======= -->
+    <section id="self-help" class="self-help">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Visual Reflections </h2>
+          <p>
+        Visual reflections offer more than meets the eye—they invite quiet moments of clarity through image and word. Each pairing becomes a gentle pause, helping the mind breathe without demanding explanation. In their stillness, they speak volumes no dialogue can capture.
+      </p>
+
+      <!-- Container 1 -->
+    <div class="vr-slider-wrapper">
+      <div class="vr-scroll-container" id="vrSlider1">
+        <img src="assets/img/qoutes/10.png" alt="Reflection 1-1">
+        <img src="assets/img/qoutes/11.png" alt="Reflection 1-2">
+      </div>
+      <div class="vr-scroll-indicator" id="vrIndicator1"></div>
+    </div>
+
+    <!-- Container 2 -->
+    <div class="vr-slider-wrapper">
+      <div class="vr-scroll-container" id="vrSlider2">
+        <img src="assets/img/qoutes/12.png" alt="Reflection 2-1">
+        <img src="assets/img/qoutes/13.png" alt="Reflection 2-2">
+      </div>
+      <div class="vr-scroll-indicator" id="vrIndicator2"></div>
+    </div>
+
+    <!-- Container 3 -->
+    <div class="vr-slider-wrapper">
+      <div class="vr-scroll-container" id="vrSlider3">
+        <img src="assets/img/qoutes/1.png" alt="Reflection 3-1">
+        <img src="assets/img/qoutes/2.png" alt="Reflection 3-2">
+        <img src="assets/img/qoutes/3.png" alt="Reflection 3-3">
+        <img src="assets/img/qoutes/4.png" alt="Reflection 3-4">
+        <img src="assets/img/qoutes/5.png" alt="Reflection 3-5">
+        <img src="assets/img/qoutes/6.png" alt="Reflection 3-6">
+        <img src="assets/img/qoutes/7.png" alt="Reflection 3-7">
+        <img src="assets/img/qoutes/8.png" alt="Reflection 3-8">
+        <img src="assets/img/qoutes/9.png" alt="Reflection 3-9">
+      </div>
+      <div class="vr-scroll-indicator" id="vrIndicator3"></div>
+    </div>
+
+    <!-- Container 4 -->
+    <div class="vr-slider-wrapper">
+      <div class="vr-scroll-container" id="vrSlider4">
+        <img src="assets/img/qoutes/14.png" alt="Reflection 4-1">
+        <img src="assets/img/qoutes/15.png" alt="Reflection 4-2">
+        <img src="assets/img/qoutes/16.png" alt="Reflection 4-3">
+        <img src="assets/img/qoutes/17.png" alt="Reflection 4-4">
+        <img src="assets/img/qoutes/18.png" alt="Reflection 4-5">
+        <img src="assets/img/qoutes/19.png" alt="Reflection 4-6">
+        <img src="assets/img/qoutes/20.png" alt="Reflection 4-7">
+      </div>
+      <div class="vr-scroll-indicator" id="vrIndicator4"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  for (let i = 1; i <= 4; i++) {
+    const slider = document.getElementById(`vrSlider${i}`);
+    const images = slider.querySelectorAll('img');
+    const indicatorBar = document.getElementById(`vrIndicator${i}`);
+
+    // Create indicator dots
+    indicatorBar.innerHTML = '';
+    images.forEach((_, index) => {
+      const dot = document.createElement('span');
+      if (index === 0) dot.classList.add('active');
+      indicatorBar.appendChild(dot);
+    });
+
+    const indicators = indicatorBar.querySelectorAll('span');
+
+    const updateActiveImage = () => {
+      const scrollLeft = slider.scrollLeft;
+      const imageWidth = slider.clientWidth;
+      const index = Math.round(scrollLeft / imageWidth);
+
+      images.forEach((img, j) => {
+        img.classList.toggle('active', j === index);
+        indicators[j]?.classList.toggle('active', j === index);
+      });
+    };
+
+    slider.addEventListener('scroll', () => {
+      clearTimeout(slider._scrollTimeout);
+      slider._scrollTimeout = setTimeout(updateActiveImage, 100);
+    });
+
+    indicators.forEach((dot, j) => {
+      dot.addEventListener('click', () => {
+        slider.scrollTo({ left: j * slider.clientWidth, behavior: 'smooth' });
+      });
+    });
+
+    updateActiveImage();
+  }
+});
+</script>
+
+
+
+    <!-- ======= therapists Section ======= -->
+    <section id="therapists" class="therapists section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Therapists</h2>
+          <p>Find below the members and beneficiaries of our Organization.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="therapists-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-member">Members</li>
+              <li data-filter=".filter-beneficiary">Beneficiaries</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row therapists-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 therapists-item filter-member">
+            <div class="therapists-wrap">
+              <img src="assets/img/therapists/Leonor.png" class="img-fluid" alt="">
+              <div class="therapists-info">
+                <h4>Leonor Bobila 2</h4>
+                <p>Member</p>
+                <div class="therapists-links">
+                  <a href="assets/img/therapists/Leonor.png" data-gallery="portfolioGallery" class="therapists-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="therapists-details.html" class="therapists-details-lightbox" data-glightbox="type: external" title="therapists Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 therapists-item filter-beneficiary">
+            <div class="therapists-wrap">
+              <img src="assets/img/therapists/Bhenny.jpeg" class="img-fluid" alt="">
+              <div class="therapists-info">
+                <h4>Bhenny Benlor Daysa Rivera</h4>
+                <p>Beneficiary</p>
+                <div class="therapists-links">
+                  <a href="assets/img/therapists/Bhenny.jpeg" data-gallery="portfolioGallery" class="therapists-lightbox" title="Beneficiary: Rivera, Bhenny Benlor D."><i class="bx bx-plus"></i></a>
+                  <a href="therapists-details.html" class="therapists-details-lightbox" data-glightbox="type: external" title="therapists Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End therapists Section -->
+
+    <!-- ======= Programs Section ======= -->
+    <section id="programs" class="programs">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Programs</h2>
+          <p>Reach out to me to find out more about our programs.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+                </svg>
+                <i class="bx bx-tachometer"></i>
+              </div>
+              <h4><a href="">Mood Tracking & Emotional Journaling</a></h4>
+              <p>Users can log daily moods and reflections to better understand emotional patterns.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-yellow">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
+                </svg>
+                <i class="bx bx-layer"></i>
+              </div>
+              <h4><a href="">Guided Mental Wellness Activities</a></h4>
+              <p>Offers daily exercises like meditation, breathing, and self-care tasks to build mental resilience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-red">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
+                </svg>
+                <i class="bx bx-slideshow"></i>
+              </div>
+              <h4><a href="">Peer Support & Anonymous Chat Rooms</a></h4>
+              <p>Anonymous chat rooms connect users with peers and trained supporters for shared experiences and empathy.</p>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+    </section><!-- End Programs Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Testimonials</h2>
+    </div>
+
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/daryll.jpeg" class="testimonial-img" alt="">
+            <h3>Daryll Daniel</h3>
+            <h4>College Student</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Using this app helped me track my mood during exams. It made me realize how my sleep and workload affect my mindset. Small changes really helped.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/jemar.jpg" class="testimonial-img" alt="">
+            <h3>Jemar Brent Gullunan</h3>
+            <h4>Engineering Student</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              I was curious about mental health and this app gave me tools to understand stress better. The guided breathing exercises are now part of my daily routine.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/joshua.jpeg" class="testimonial-img" alt="">
+            <h3>Blessed Joshua Bustamante</h3>
+            <h4>Senior High Student</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              I didn’t know how much stress I was carrying until I started journaling with this app. It’s like a quiet space that listens without judgment.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/jp.jpg" class="testimonial-img" alt="">
+            <h3>Joven Paulo Aquisan</h3>
+            <h4>Computer Science Student</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              The peer support chat made it easier to talk about my school burnout. I didn’t expect others to relate so much—it made me feel less alone.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/ronie.jpeg" class="testimonial-img" alt="">
+            <h3>Ronie Fernandez</h3>
+            <h4>IT Student</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              School deadlines were overwhelming, but this app’s check-ins helped me stay grounded. Even five minutes a day made a big difference in my mindset.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- End Testimonials Section -->
+
+
+    <!-- ======= Support Section ======= -->
+    <section id="support" class="support">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Support</h2>
+        </div>
+
+        <div class="row mt-1">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>
+                <a href="https://www.google.com/maps/place/King's+College+of+the+Philippines/@16.4557389,120.5863505,17z" target="_blank" style="text-decoration: none; color: inherit;">
+                  Pico, La Trinidad, Benguet, Cordillera Administrative Region, Philippines
+                </a>
+              </p>
+            </div>
+
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>
+                  <a href="mailto:riverabenlor461@gmail.com" style="text-decoration: none; color: inherit;">
+                    riverabenlor461@gmail.com
+                  </a>
+                </p>
+              </div>
+
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>
+                  <a href="tel:+639074342114" style="text-decoration: none; color: inherit;">
+                    (+63) 907 4342 114
+                  </a>
+                </p>
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/support.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Support Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Mental Health Application</h3>
+      <p>"Track your emotions, cultivate resilience, and find balance every day. Your mental wellness journey starts here—designed to empower, support, and inspire positive change."</p>
+      <div class="social-links">
+        <a href="https://x.com/RiveraBhenny" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/benlor.rivera.9" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/rivera.bhenny/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/Bhenny-dev" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/benlor-rivera-96268234a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.j"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Template Story Collapse - Emerge -->
+  <script>
+  function toggleSection(wrapperId, btn) {
+    const wrapper = document.getElementById(wrapperId);
+    wrapper.classList.toggle('collapsed');
+    btn.textContent = wrapper.classList.contains('collapsed') ? 'More' : 'Less';
+  }
+
+  // Optionally collapse all at load
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.collapsed').forEach(el => el.classList.add('collapsed'));
+  });
+</script>
+
+  
+
+
+</body>
+
+</html>
