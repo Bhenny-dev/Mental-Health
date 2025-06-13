@@ -490,6 +490,7 @@ section {
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-height: 100px;
+  margin: 0;
 }
 
 .toggle-btn {
